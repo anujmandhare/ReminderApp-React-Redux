@@ -3,17 +3,20 @@ import { bake_cookie, read_cookie } from "sfcookies";
 
 let count = 1;
 
+//Add reminder to State funtion
 const addReminder = (data) => {
   const { text, date } = data;
   return { text, id: count++, date };
 };
 
+//Remove reminder from State funtion
 const removeReminder = (reminder, id) => {
   const index = reminder.findIndex((_) => _.id === id);
   reminder.splice(index, 1);
   return reminder;
 };
 
+//Main Reducer
 const reducer = (state = [], action) => {
   var reminder = null;
   state = read_cookie("reminder", reminder);

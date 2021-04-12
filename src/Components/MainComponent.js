@@ -17,6 +17,7 @@ class MainComponent extends Component {
     };
   }
 
+  //Render To do list
   renderReminder = () => {
     const { reminder } = this.props;
     return (
@@ -38,10 +39,12 @@ class MainComponent extends Component {
     );
   };
 
+  //Add a new Reminder Function
   addfunction = () => {
     this.props.addReminder(this.state.text, this.state.dueDate);
   };
 
+  //Remove a reminder function
   removefunction = (id) => this.props.removeReminder(id);
 
   render() {

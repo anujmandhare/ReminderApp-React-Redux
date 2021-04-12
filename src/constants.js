@@ -1,3 +1,4 @@
+//Action Type object
 const constants = {
   ADD_REMINDER: "ADD_REMINDER",
   REMOVE_REMINDER: "REMOVE_REMINDER",
