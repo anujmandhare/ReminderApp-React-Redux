@@ -42,6 +42,7 @@ class MainComponent extends Component {
   //Add a new Reminder Function
   addfunction = () => {
     this.props.addReminder(this.state.text, this.state.dueDate);
+    this.setState({ text: "", dueDate: "" });
   };
 
   //Remove a reminder function
@@ -55,6 +56,7 @@ class MainComponent extends Component {
           <input
             id="remain"
             type="text"
+            value={this.state.text}
             placeholder="I have to..."
             className="form-control"
             onChange={(event) => {
@@ -64,7 +66,10 @@ class MainComponent extends Component {
           <input
             type="datetime-local"
             className="form-control"
-            onChange={(event) => this.setState({ dueDate: event.target.value })}
+            value={this.state.dueDate}
+            onChange={(event) => {
+              this.setState({ dueDate: event.target.value });
+            }}
           ></input>
         </div>
         <button
